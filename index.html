@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Websites, AI assistants, automations and AI products, built and set up for you. EN / RU.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mariia Meleshina — AI Solutions Builder">
+<meta property="og:description" content="Websites, AI assistants, automations and AI products, built and set up for you. EN / RU.">
+<meta property="og:url" content="https://blackasp.github.io/">
+<meta property="og:image" content="https://blackasp.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<title>Mariia Meleshina — AI Solutions Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --fg:#121a2b; --muted:#515c72; --line:#d5dbe6;
+  --accent:#2740d6; --accent-fg:#ffffff; --ok:#0b7a5c; --warn:#a85a00; --fail:#b3263a;
+  --display:"Unbounded","Golos Text",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1524; --surface:#172033; --fg:#e8ecf5; --muted:#a3aec5; --line:#2b3650;
+  --accent:#8fa0ff; --accent-fg:#0d1330; --ok:#4fd0a8; --warn:#f0a94a; --fail:#ff7d8c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1524; --surface:#172033; --fg:#e8ecf5; --muted:#a3aec5; --line:#2b3650;
+  --accent:#8fa0ff; --accent-fg:#0d1330; --ok:#4fd0a8; --warn:#f0a94a; --fail:#ff7d8c; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);-webkit-text-size-adjust:100%}
+html[data-lang="en"] [data-l="ru"],html[data-lang="ru"] [data-l="en"],html:not([data-lang]) [data-l="ru"]{display:none}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font:600 clamp(1.55rem,3.8vw,2.4rem)/1.24 var(--display);letter-spacing:-.02em}
+.role{margin-bottom:14px;font-size:.92rem;color:var(--muted)}
+.role b{display:inline-block;margin-right:6px;padding:5px 10px;border-radius:6px;background:var(--accent);color:var(--accent-fg);font:500 .85rem/1.3 var(--mono)}
+h2{font:500 clamp(1.25rem,2.8vw,1.65rem)/1.3 var(--display);letter-spacing:-.01em}
+h3{font:600 1.08rem/1.35 var(--body)}
+p{margin:0}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:12;background:var(--bg)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.who{font-weight:600;line-height:1.25;min-width:0}
+.who small{display:block;font:400 .72rem/1.4 var(--mono);color:var(--muted)}
+.lang{display:flex;flex:none;border:2px solid var(--accent);border-radius:999px;padding:3px;gap:3px;background:var(--surface)}
+.lang button{font:600 .85rem/1 var(--body);border:0;border-radius:999px;padding:9px 13px;background:transparent;color:var(--fg);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+
+.hero{max-width:780px;padding-block:56px 36px}
+.hero>*{min-width:0}
+.lead{font-size:1.12rem;color:var(--muted);margin-top:18px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);font:600 .98rem/1.2 var(--body);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.avail{margin-top:14px;font-size:.9rem;color:var(--muted)}
+
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line);margin:0;padding:0}
+.facts div{background:var(--bg);padding:18px 14px 18px 0}
+.facts div+div{padding-left:14px}
+.facts dt{font:600 1.35rem/1.2 var(--display);font-variant-numeric:tabular-nums}
+.facts dd{margin:6px 0 0;font-size:.85rem;color:var(--muted);line-height:1.4}
+
+section{padding-block:52px 0}
+.sub{color:var(--muted);margin-top:8px;max-width:40em}
+
+.pains{margin-top:24px;border-top:1px solid var(--line)}
+.pain{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px 40px;padding:22px 0;border-bottom:1px solid var(--line)}
+.pain h3{font-size:1.15rem}
+.pain p{color:var(--muted)}
+.pain .get{margin-top:8px;color:var(--fg);font-size:.95rem}
+.pain .get strong{color:var(--accent);font-weight:600}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.meta{font:400 .75rem/1.5 var(--mono);color:var(--muted)}
+.card ul{margin:0;padding-left:18px;font-size:.95rem}
+.card li{margin-bottom:5px}
+.card .proof{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.card .proof strong{color:var(--fg)}
+.card.open{border:2px solid var(--accent)}
+.card.wide{grid-column:1/-1}
+.card .problem{font-size:.95rem;color:var(--muted)}
+.card .problem strong{color:var(--accent)}
+.badge{align-self:flex-start;font:500 .72rem/1 var(--mono);padding:6px 9px;border-radius:5px;border:1px solid var(--line);color:var(--muted)}
+.open .badge{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.after{margin-top:16px;font-size:.93rem;color:var(--muted)}
+
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.ways>div{border-top:2px solid var(--fg);padding-top:14px;min-width:0}
+.ways p{color:var(--muted);margin-top:8px;font-size:.95rem}
+
+.stack{margin:20px 0 0;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:0}
+.stack dt,.stack dd{margin:0;padding:11px 0;border-top:1px solid var(--line)}
+.stack dt{font-weight:600}
+.stack dd{font:400 .84rem/1.7 var(--mono);color:var(--muted)}
+
+.contact{margin-top:60px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:32px 24px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}
+.mail code{font:500 .95rem/1.4 var(--mono);user-select:all;overflow-wrap:anywhere}
+.mail button{font:500 .85rem/1 var(--body);padding:8px 12px;border-radius:7px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+footer{padding-block:28px 40px;font-size:.84rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-block:32px 28px}
+  .grid,.ways,.pain{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts div:nth-child(odd){padding-left:0}
+  .stack{grid-template-columns:1fr}
+  .stack dd{border-top:0;padding-top:0}
+}
+@media (max-width:420px){.who small{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <div class="who"><span data-l="en">Mariia Meleshina</span><span data-l="ru">Мария Мелешина</span><small>AI Solutions Builder</small></div>
+    <div class="lang" role="group" aria-label="Language / Язык">
+      <button type="button" data-set="en" aria-pressed="true">English</button>
+      <button type="button" data-set="ru" aria-pressed="false">Русский</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="role"><b>AI Solutions Builder</b></p>
+      <h1><span data-l="en">I’ll build your website, AI assistant or AI product</span><span data-l="ru">Соберу для вас сайт, AI-ассистента или AI-продукт</span></h1>
+      <p class="lead"><span data-l="en">You bring an idea or a routine you are tired of. I work out what you actually need, build it, set it up and show you how to use it.</span><span data-l="ru">Вы приходите с идеей или с рутиной, от которой устали. Я разбираюсь, что вам на самом деле нужно, собираю, настраиваю и показываю, как этим пользоваться.</span></p>
+      <div class="cta">
+        <a class="btn" href="https://t.me/mariblackasp" target="_blank" rel="noopener"><span data-l="en">Tell me your task</span><span data-l="ru">Рассказать о задаче</span></a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mariia-meleshina-605237103" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="avail"><span data-l="en">I work remotely, in English or Russian.</span><span data-l="ru">Работаю удалённо, на русском и английском.</span></p>
+    </div>
+  </div>
+
+  <dl class="facts">
+    <div><dt><span data-l="en">2 weeks</span><span data-l="ru">2 недели</span></dt><dd><span data-l="en">about this long from the first commit to live payments in a client’s Telegram bot</span><span data-l="ru">примерно столько прошло от первого коммита до живых платежей в клиентском Telegram-боте</span></dd></div>
+    <div><dt>9</dt><dd><span data-l="en">AI agents work inside the artist’s open call assistant</span><span data-l="ru">AI-агентов работают внутри ассистента художника по open calls</span></dd></div>
+    <div><dt>700+</dt><dd><span data-l="en">citations and quotes checked by a script in my branding assistant’s knowledge base</span><span data-l="ru">ссылок и цитат проверяет скрипт в базе знаний ассистента по бренду и маркетингу</span></dd></div>
+    <div><dt>10+</dt><dd><span data-l="en">years of systems analysis in banks, e-commerce and AI products</span><span data-l="ru">лет системного анализа в банках, e-commerce и AI-продуктах</span></dd></div>
+  </dl>
+
+  <section>
+    <h2><span data-l="en">What you can ask me for</span><span data-l="ru">С чем ко мне прийти</span></h2>
+    <div class="pains">
+      <article class="pain">
+        <h3><span data-l="en">“I need a website that explains what I do”</span><span data-l="ru">«Мне нужен сайт, по которому понятно, чем я занимаюсь»</span></h3>
+        <div><p><span data-l="en">A portfolio or a page for your service, comfortable to read on a phone. This page is an example.</span><span data-l="ru">Портфолио или страница услуги, которую удобно читать с телефона. Эта страница — пример.</span></p>
+        <p class="get"><strong><span data-l="en">You get:</span><span data-l="ru">Вы получаете:</span></strong> <span data-l="en">structure, copy and a working page, in two languages if you need them.</span><span data-l="ru">структуру, тексты и готовую страницу, при необходимости на двух языках.</span></p></div>
+      </article>
+      <article class="pain">
+        <h3><span data-l="en">“I want my own AI assistant, but I don’t know how to set it up”</span><span data-l="ru">«Хочу своего AI-ассистента, но не знаю, как его настроить»</span></h3>
+        <div><p><span data-l="en">A generic chat knows nothing about you or your work, and you explain everything again each time.</span><span data-l="ru">Обычный чат ничего не знает о вас и вашем деле, и каждый раз приходится объяснять заново.</span></p>
+        <p class="get"><strong><span data-l="en">You get:</span><span data-l="ru">Вы получаете:</span></strong> <span data-l="en">an assistant set up around your materials and your rules, plus a walkthrough.</span><span data-l="ru">ассистента, настроенного на ваши материалы и правила, и объяснение, как с ним работать.</span></p></div>
+      </article>
+      <article class="pain">
+        <h3><span data-l="en">“Routine eats my time”</span><span data-l="ru">«Рутина съедает время»</span></h3>
+        <div><p><span data-l="en">Searching, checking, sorting and compiling reports by hand, again and again.</span><span data-l="ru">Искать, проверять, разбирать и собирать отчёты вручную, раз за разом.</span></p>
+        <p class="get"><strong><span data-l="en">You get:</span><span data-l="ru">Вы получаете:</span></strong> <span data-l="en">an automation or a team of AI agents that does the legwork and leaves the decisions to you.</span><span data-l="ru">автоматизацию или команду AI-агентов: они делают черновую работу, а решения остаются за вами.</span></p></div>
+      </article>
+      <article class="pain">
+        <h3><span data-l="en">“I have an idea for a product”</span><span data-l="ru">«У меня есть идея продукта»</span></h3>
+        <div><p><span data-l="en">For example, a Telegram bot that sells and delivers your courses.</span><span data-l="ru">Например, Telegram-бот, который продаёт и выдаёт ваши курсы.</span></p>
+        <p class="get"><strong><span data-l="en">You get:</span><span data-l="ru">Вы получаете:</span></strong> <span data-l="en">a clear scope, then a working product: logic, payments if needed, launch on a server.</span><span data-l="ru">понятный объём работ, а затем работающий продукт: логику, при необходимости оплату и запуск на сервере.</span></p></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2><span data-l="en">What I have already built</span><span data-l="ru">Что я уже собрала</span></h2>
+    <p class="sub"><span data-l="en">I build with Claude Code. The task, the architecture decisions and the acceptance are mine; AI agents write the code.</span><span data-l="ru">Собираю в Claude Code. Задача, архитектурные решения и приёмка на мне; код пишут AI-агенты.</span></p>
+    <div class="grid">
+      <article class="card wide">
+        <span class="badge"><span data-l="en">Private</span><span data-l="ru">Закрытый</span></span>
+        <h3><span data-l="en">AI assistant for personal branding and marketing</span><span data-l="ru">AI-ассистент по личному бренду и маркетингу</span></h3>
+        <p class="problem"><strong><span data-l="en">Problem:</span><span data-l="ru">Проблема:</span></strong> <span data-l="en">you are good at your craft, but don’t know how to talk about yourself, where to find your audience and how to get to sales. Generic advice ignores your situation.</span><span data-l="ru">вы хорошо делаете своё дело, но не знаете, как рассказывать о себе, где искать свою аудиторию и как прийти к продажам. Общие советы не учитывают вашу ситуацию.</span></p>
+        <ul>
+          <li><span data-l="en"><b>Starts from your goal:</b> clients, sales or recognition. From it, works out what you should be known for, who you talk to and how you differ.</span><span data-l="ru"><b>Начинает с вашей цели:</b> клиенты, продажи или известность. От неё определяет, чем вам запомниться, для кого говорить и чем вы отличаетесь.</span></li>
+          <li><span data-l="en"><b>Builds a content plan you can keep up:</b> which 2–3 platforms and what format, how to tell your story so people read to the end.</span><span data-l="ru"><b>Составляет посильный план контента:</b> какие 2–3 площадки и какой формат, как рассказывать о себе, чтобы дочитывали.</span></li>
+          <li><span data-l="en"><b>Tests instead of guessing:</b> suggests small experiments and compares each post with your own usual numbers, then you do more of what works.</span><span data-l="ru"><b>Проверяет, а не гадает:</b> предлагает небольшие эксперименты и сравнивает каждый пост с вашими обычными цифрами. Что работает, того делаете больше.</span></li>
+          <li><span data-l="en"><b>Leads towards sales:</b> trust first, then what to offer and in what order. For art it also covers pricing, galleries and selling abroad.</span><span data-l="ru"><b>Ведёт к продажам:</b> сначала доверие, затем что и в каком порядке предлагать. Для художника — ещё цены, галереи и продажи за рубеж.</span></li>
+          <li><span data-l="en"><b>Stays honest:</b> says when an idea works against your goal, shows what the advice is based on and warns about tax and legal risks.</span><span data-l="ru"><b>Говорит честно:</b> предупреждает, если идея мешает цели, показывает, на чём основан совет, и напоминает о налоговых и правовых рисках.</span></li>
+        </ul>
+        <p class="proof"><span data-l="en">It is aimed at a result: bigger answers end with a next step, such as an exercise, an experiment or a number to check. The methods come from a full personal branding course and its workbook, with 2026 updates and external research. A script checks <strong>700+ citations and quotes</strong>.</span><span data-l="ru">Нацелен на результат: большие ответы заканчиваются следующим шагом — упражнением, экспериментом или цифрой для проверки. Методы взяты из большого курса по личному бренду и рабочей тетради, дополнены поправками 2026 года и внешними исследованиями. Скрипт проверяет <strong>700+ ссылок и цитат</strong>.</span></p>
+      </article>
+      <article class="card open">
+        <span class="badge"><span data-l="en">Open source</span><span data-l="ru">Открытый код</span></span>
+        <h3>Job Hunter</h3>
+        <p class="problem"><strong><span data-l="en">Problem:</span><span data-l="ru">Проблема:</span></strong> <span data-l="en">job search eats hours: many sites and chats, the same vacancies, a new letter every time.</span><span data-l="ru">поиск работы съедает часы: много сайтов и чатов, одни и те же вакансии, каждый раз новое письмо.</span></p>
+        <p><span data-l="en">A Claude skill that automates job search: collects vacancies from job boards and Telegram, filters them to your profile, writes short cover letters, applies where the platform allows it and reports with links.</span><span data-l="ru">Навык для Claude, который автоматизирует поиск работы: ищет вакансии на сайтах о работе и в Telegram, фильтрует под профиль, пишет короткие письма, откликается там, где это возможно, и присылает отчёт со ссылками.</span></p>
+        <ul>
+          <li><span data-l="en">Split into modes so the model loads only what the step needs.</span><span data-l="ru">Разделён на режимы: модель читает только то, что нужно на шаге.</span></li>
+          <li><span data-l="en">Deduplication, freshness checks and filters covered by tests.</span><span data-l="ru">Дедупликация, проверка свежести и фильтры покрыты тестами.</span></li>
+        </ul>
+        <p class="proof"><a href="https://github.com/blackasp/job-hunter-skill" target="_blank" rel="noopener"><span data-l="en">See the code on GitHub →</span><span data-l="ru">Смотреть код на GitHub →</span></a></p>
+      </article>
+      <article class="card">
+        <span class="badge"><span data-l="en">Private · client project</span><span data-l="ru">Закрытый · клиентский проект</span></span>
+        <h3><span data-l="en">Telegram bot that sells and delivers courses</span><span data-l="ru">Telegram-бот для продажи и выдачи курсов</span></h3>
+        <p class="problem"><strong><span data-l="en">Problem:</span><span data-l="ru">Проблема:</span></strong> <span data-l="en">taking payments, sending materials and tracking who has access by hand.</span><span data-l="ru">вручную принимать оплату, отправлять материалы и следить, у кого есть доступ.</span></p>
+        <p><span data-l="en">Payments, access periods, scheduled delivery of programme days. The owner edits the catalogue in a Google Sheet without a developer.</span><span data-l="ru">Оплата, сроки доступа, выдача дней программы по расписанию. Владелица меняет каталог в Google-таблице без разработчика.</span></p>
+        <ul>
+          <li><span data-l="en">A repeated payment notice does not grant access twice.</span><span data-l="ru">Повторное уведомление об оплате не выдаёт доступ дважды.</span></li>
+          <li><span data-l="en">Encrypted backups with a rehearsed restore, server monitoring.</span><span data-l="ru">Зашифрованные бэкапы с проверенным восстановлением, мониторинг.</span></li>
+        </ul>
+        <p class="proof"><span data-l="en">Live payments about <strong>two weeks</strong> after the first commit; <strong>1,000+ automated tests</strong> in the codebase.<br>Python · aiogram · PostgreSQL · Docker</span><span data-l="ru">Приём живых платежей примерно через <strong>две недели</strong> после первого коммита; в коде <strong>1000+ автотестов</strong>.<br>Python · aiogram · PostgreSQL · Docker</span></p>
+      </article>
+      <article class="card">
+        <span class="badge"><span data-l="en">Private</span><span data-l="ru">Закрытый</span></span>
+        <h3><span data-l="en">AI assistant for an artist: open calls and applications</span><span data-l="ru">AI-ассистент художника: open calls и заявки</span></h3>
+        <p class="problem"><strong><span data-l="en">Problem:</span><span data-l="ru">Проблема:</span></strong> <span data-l="en">finding suitable open calls takes a long time, it is unclear whether you fit, and every application form is different.</span><span data-l="ru">подходящие open calls долго искать, непонятно, пройдёте ли вы, и у каждой заявки своя форма.</span></p>
+        <p><span data-l="en">The artist asks in the chat, in Russian or English, and the assistant guides them from search to a prepared application.</span><span data-l="ru">Художник пишет в чат на русском или английском, и ассистент ведёт от поиска до подготовленной заявки.</span></p>
+        <ul>
+          <li><span data-l="en"><b>Finds</b> exhibitions, festivals, competitions, residencies and grants, and checks the terms and deadlines on the organiser’s page.</span><span data-l="ru"><b>Ищет</b> выставки, фестивали, конкурсы, резиденции и гранты, проверяет условия и сроки на сайте организатора.</span></li>
+          <li><span data-l="en"><b>Assesses the fit:</b> do the works, medium and theme suit the event’s concept and format, can the artist take part. It gives arguments for and against and suggests which works to submit.</span><span data-l="ru"><b>Оценивает соответствие:</b> подходят ли работы, техника и тема под концепцию и формат события, можно ли участвовать. Объясняет доводы за и против и предлагает, какие работы подать.</span></li>
+          <li><span data-l="en"><b>Prepares the application:</b> goes through the form field by field, fills in what is already known, drafts texts and gives guidance where the artist has to answer.</span><span data-l="ru"><b>Готовит заявку:</b> разбирает форму по полям, подставляет уже известное, пишет черновики и подсказывает, как ответить там, где нужен сам художник.</span></li>
+          <li><span data-l="en"><b>Lists what is left:</b> materials, order of images, open questions and risks.</span><span data-l="ru"><b>Показывает, что осталось:</b> материалы, порядок изображений, открытые вопросы и риски.</span></li>
+        </ul>
+        <p class="proof"><span data-l="en">The artist makes the decision and submits the application. Inside: <strong>9 AI agents</strong> with separate roles.</span><span data-l="ru">Решение и отправка заявки остаются за художником. Внутри <strong>9 AI-агентов</strong> с разными ролями.</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2><span data-l="en">Why you can trust me with it</span><span data-l="ru">Почему мне можно это доверить</span></h2>
+    <p class="sub"><span data-l="en">Before AI products I spent 10+ years as a systems analyst: turning what people want into something that can be built, and thinking through what happens when it breaks.</span><span data-l="ru">До AI-продуктов я 10+ лет работала системным аналитиком: превращала желания людей в то, что можно построить, и продумывала, что будет при сбое.</span></p>
+    <dl class="stack">
+      <dt>Handysay</dt><dd><span data-l="en">Backend of an AI sign language translation platform, designed from scratch</span><span data-l="ru">Бэкенд AI-платформы перевода жестового языка, спроектированный с нуля</span></dd>
+      <dt>Uzum</dt><dd><span data-l="en">Warehouse system of Uzbekistan’s largest marketplace</span><span data-l="ru">Складская система крупнейшего маркетплейса Узбекистана</span></dd>
+      <dt><span data-l="en">Sber</span><span data-l="ru">Сбер</span></dt><dd><span data-l="en">Voice biometrics and voice menu in the bank’s contact centre</span><span data-l="ru">Голосовая биометрия и голосовое меню в контакт-центре банка</span></dd>
+      <dt><span data-l="en">Alfa-Bank</span><span data-l="ru">Альфа-Банк</span></dt><dd><span data-l="en">Analytics for Ozon and Wildberries sellers</span><span data-l="ru">Аналитика для продавцов Ozon и Wildberries</span></dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2><span data-l="en">How we work</span><span data-l="ru">Как мы работаем</span></h2>
+    <div class="ways">
+      <div><h3><span data-l="en">1. We take the task apart</span><span data-l="ru">1. Разбираем задачу</span></h3><p><span data-l="en">You describe it in your own words. I ask questions and say what is worth building and what is not needed.</span><span data-l="ru">Вы рассказываете своими словами. Я задаю вопросы и говорю, что стоит делать, а что не нужно.</span></p></div>
+      <div><h3><span data-l="en">2. I build and show</span><span data-l="ru">2. Собираю и показываю</span></h3><p><span data-l="en">We agree on the scope first. You see a working version and correct it.</span><span data-l="ru">Сначала договариваемся об объёме. Вы смотрите работающую версию и поправляете.</span></p></div>
+      <div><h3><span data-l="en">3. I hand it over</span><span data-l="ru">3. Передаю вам</span></h3><p><span data-l="en">I set it up and explain how to use it and what to do when something goes wrong.</span><span data-l="ru">Настраиваю и объясняю, как пользоваться и что делать, если что-то пошло не так.</span></p></div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <h2><span data-l="en">Have a task like this? Tell me about it</span><span data-l="ru">Есть похожая задача? Расскажите</span></h2>
+    <p class="sub"><span data-l="en">A few lines are enough: what you want to get and what is in the way. No technical terms needed.</span><span data-l="ru">Хватит пары строк: что хотите получить и что мешает. Технические термины не нужны.</span></p>
+    <div class="cta">
+      <a class="btn" href="https://t.me/mariblackasp" target="_blank" rel="noopener">Telegram @mariblackasp</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/mariia-meleshina-605237103" target="_blank" rel="noopener">LinkedIn</a>    </div>
+    <div class="mail"><code id="email">marimeleshina@gmail.com</code><button type="button" id="copy"><span data-off><span data-l="en">Copy email</span><span data-l="ru">Скопировать почту</span></span><span data-on hidden><span data-l="en">Copied</span><span data-l="ru">Скопировано</span></span></button></div>
+  </div>
+</main>
+<footer class="wrap">© 2026 <span data-l="en">Mariia Meleshina</span><span data-l="ru">Мария Мелешина</span></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, buttons=document.querySelectorAll('[data-set]');
+  function fromUrl(){
+    var h=location.hash.slice(1), q=new URLSearchParams(location.search).get('lang');
+    return /^(ru|en)$/.test(h)?h:/^(ru|en)$/.test(q||'')?q:null;
+  }
+  function apply(l){
+    root.setAttribute('data-lang',l); root.lang=l;
+    buttons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.set===l))});
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  apply(fromUrl()||saved||(/^ru/i.test(navigator.language||'')?'ru':'en'));
+  buttons.forEach(function(b){b.addEventListener('click',function(){
+    apply(b.dataset.set); try{localStorage.setItem('lang',b.dataset.set)}catch(e){}
+    try{history.replaceState(null,'',location.pathname+'#'+b.dataset.set)}catch(e){}
+  })});
+  window.addEventListener('hashchange',function(){var l=fromUrl(); if(l) apply(l)});
+
+  function swap(el,on){
+    el.querySelectorAll('[data-off]').forEach(function(n){n.hidden=on});
+    el.querySelectorAll('[data-on]').forEach(function(n){n.hidden=!on});
+  }
+  var copy=document.getElementById('copy'), mail=document.getElementById('email');
+  copy.addEventListener('click',function(){
+    function select(){var r=document.createRange(); r.selectNodeContents(mail); var s=getSelection(); s.removeAllRanges(); s.addRange(r)}
+    if(!navigator.clipboard) return select();
+    navigator.clipboard.writeText(mail.textContent).then(function(){swap(copy,true); setTimeout(function(){swap(copy,false)},1800)},select);
+  });
+})();
+</script>
+</body>
+</html>
